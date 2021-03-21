@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "POF Keyword Search",
+    "description": "This extension will find matches on Plenty of Fish based on keyword. This extension was originally named \"POF Personality Spear Fisher.\"",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "128.png",
+        "default_popup": "popup.html"
+    },
+    "icons": { "16": "16.png",
+           "48": "48.png",
+          "128": "128.png"
+    },
+    "content_scripts": [{
+        "matches": ["https://m.pof.com/search", "https://m.pof.com/viewprofile*"],
+        "js": ["jquery.js", "background.js"]
+    }],
+    "permissions": ["https://m.pof.com/search", "https://m.pof.com/viewprofile*", "storage"]
+}
