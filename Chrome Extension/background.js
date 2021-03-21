@@ -71,7 +71,7 @@ chrome.storage.local.get("profile_count", function(data) {
         setTimeout(function() {
             // Search profile
             searchProfile();
-        }, 1000);
+        }, 3000);
     }
 });
 
@@ -104,6 +104,9 @@ function goFishing() {
         // Assign to the script
         assignChromeStorageLocally("3", pages);
     });
+
+    // Inform user the search is about to start
+    window.alert("Thanks for using POF Personality Spear Fisher! We're just going to gather the profiles, so please wait until that is done. You'll see another popup like this when it's ready to move on to the next stage.");
 
     // Intialise variables
     var counter = 1;
@@ -140,7 +143,7 @@ function goFishing() {
             // Parse profiles
             parseProfiles(profile_array_temp);
         }
-    }, 5000);
+    }, 10000);
 
     function parseProfiles(profile_array_temp) {
         // Clear interval
@@ -166,6 +169,9 @@ function goFishing() {
             profile_index: 0
         });
 
+        // Inform user that profiles have been stored
+        window.alert("That's finished! Now I will check the profiles for matches for you!");
+
         // Go to next page
         window.location.href = profile_array_temp[0];
     }
@@ -177,41 +183,41 @@ function goFishing() {
  * ================================ */
 function searchProfile() {
     setTimeout(function() {
-        if ($("#profile-banner").length != undefined && $("#profile-banner").length > 0) {
-            // Set match flag
-            var match_found = false;
+        // Set match flag
+        var match_found = false;
 
-            // Grab HTML
-            var profile_text = $("#profile-about-copy").html();
+        // Grab HTML
+        var profile_text = $("#profile-about-copy").html();
 
-            if (profile_text != undefined) {
-                // Process data
-                // Check for interests in their profile
-                for (var i = 0; i < interests.length; i++) {
-                    var keyword = interests[i];
+        if (profile_text != undefined) {
+            // Process data
+            console.log("User profile: " + profile_text);
 
-                    if (profile_text.includes(keyword)) {
-                        // Toggle match flag
-                        match_found = true;
+            // Check for interests in their profile
+            for (var i = 0; i < interests.length; i++) {
+                var keyword = interests[i];
 
-                        // Inform the user and stop the search!
-                        stopSearching(keyword);
-                    }
+                if (profile_text.includes(keyword)) {
+                    // Toggle match flag
+                    match_found = true;
+
+                    // Inform the user and stop the search!
+                    stopSearching(keyword);
                 }
             }
-
-            // Increment index
-            profile_index++;
-
-            // Store new index
-            chrome.storage.local.set({profile_index: profile_index});
-
-            if (match_found == false) {
-                // Go to next profile
-                window.location.href = profile_array[profile_index];
-            }
         }
-    }, 100);
+
+        // Increment index
+        profile_index++;
+
+        // Store new index
+        chrome.storage.local.set({profile_index: profile_index});
+
+        if (match_found == false) {
+            // Go to next profile
+            window.location.href = profile_array[profile_index];
+        }
+    }, 1000);
 }
 
 /* =====================
