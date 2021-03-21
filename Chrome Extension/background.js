@@ -14,6 +14,7 @@ var profile_index = 0;
 var profile_array = [];
 var interests = [];
 var pages = 0;
+var profile_array_temp = [];
 
 // Get passed interests
 chrome.storage.local.get("interest_one", function(data) {
@@ -113,7 +114,6 @@ function goFishing() {
     const interval = setInterval(function() {
         // Get profile HTML from page
         var profiles = $("#profilelist-container").html();
-        var profile_array_temp = [];
 
         // Define regular expression to parse profile links
         var regular_expression = /viewprofile\?profileId=.+?(")/g;
