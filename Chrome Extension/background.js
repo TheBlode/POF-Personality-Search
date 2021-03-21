@@ -14,7 +14,6 @@ var profile_index = 0;
 var profile_array = [];
 var interests = [];
 var pages = 0;
-var profile_array_temp = [];
 
 // Get passed interests
 chrome.storage.local.get("interest_one", function(data) {
@@ -72,7 +71,7 @@ chrome.storage.local.get("profile_count", function(data) {
         setTimeout(function() {
             // Search profile
             searchProfile();
-        }, 5000);
+        }, 1000);
     }
 });
 
@@ -107,10 +106,11 @@ function goFishing() {
     });
 
     // Intialise variables
-    var counter = 0;
+    var counter = 1;
     const interval = setInterval(function() {
         // Get profile HTML from page
         var profiles = $("#profilelist-container").html();
+        var profile_array_temp = [];
 
         // Define regular expression to parse profile links
         var regular_expression = /viewprofile\?profileId=.+?(")/g;
@@ -177,39 +177,41 @@ function goFishing() {
  * ================================ */
 function searchProfile() {
     setTimeout(function() {
-        // Set match flag
-        var match_found = false;
+        if ($("#profile-banner").length != undefined && $("#profile-banner").length > 0) {
+            // Set match flag
+            var match_found = false;
 
-        // Grab HTML
-        var profile_text = $("#profile-about-copy").html();
+            // Grab HTML
+            var profile_text = $("#profile-about-copy").html();
 
-        if (profile_text != undefined) {
-            // Process data
-            // Check for interests in their profile
-            for (var i = 0; i < interests.length; i++) {
-                var keyword = interests[i];
+            if (profile_text != undefined) {
+                // Process data
+                // Check for interests in their profile
+                for (var i = 0; i < interests.length; i++) {
+                    var keyword = interests[i];
 
-                if (profile_text.includes(keyword)) {
-                    // Toggle match flag
-                    match_found = true;
+                    if (profile_text.includes(keyword)) {
+                        // Toggle match flag
+                        match_found = true;
 
-                    // Inform the user and stop the search!
-                    stopSearching(keyword);
+                        // Inform the user and stop the search!
+                        stopSearching(keyword);
+                    }
                 }
             }
+
+            // Increment index
+            profile_index++;
+
+            // Store new index
+            chrome.storage.local.set({profile_index: profile_index});
+
+            if (match_found == false) {
+                // Go to next profile
+                window.location.href = profile_array[profile_index];
+            }
         }
-
-        // Increment index
-        profile_index++;
-
-        // Store new index
-        chrome.storage.local.set({profile_index: profile_index});
-
-        if (match_found == false) {
-            // Go to next profile
-            window.location.href = profile_array[profile_index];
-        }
-    }, 5000);
+    }, 100);
 }
 
 /* =====================
@@ -240,7 +242,7 @@ function assignChromeStorageLocally(variable, value) {
  * Date: 22/02/21
  * =====================
  */
-function stopSearching(keyword) {
+function stopSearching() {
     // Reset locally stored variables
     chrome.storage.local.set({fishing: 0});
     chrome.storage.local.set({profile_count: 0});
