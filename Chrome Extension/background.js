@@ -188,6 +188,8 @@ function searchProfile() {
 
         // Grab HTML
         var profile_text = $("#profile-about-copy").html();
+        var profile_interests = $(".css-yv11yr").html();
+        var profile_profession = $("#attributelist-item-occupation").html();
 
         if (profile_text != undefined) {
             // Process data
@@ -201,8 +203,43 @@ function searchProfile() {
                     // Toggle match flag
                     match_found = true;
 
-                    // Inform the user and stop the search!
-                    stopSearching(keyword);
+                    // Keep searching or stop?
+                    var confirm = confirm("Would you like to continue searching?");
+
+                    if (confirm == true) {
+                        // Inform the user and stop the search!
+                        stopSearching(keyword);
+                    }
+                }
+
+                if (profile_interests != undefined) {
+                    if (profile_interests.includes(keyword)) {
+                        // Toggle match flag
+                        match_found = true;
+
+                        // Keep searching or stop?
+                        var confirm = confirm("Would you like to continue searching?");
+
+                        if (confirm == true) {
+                            // Inform the user and stop the search!
+                            stopSearching(keyword);
+                        }
+                    }
+                }
+
+                if (profile_profession != undefined) {
+                    if (profile_profession.includes(keyword)) {
+                        // Toggle match flag
+                        match_found = true;
+
+                        // Keep searching or stop?
+                        var confirm = confirm("Would you like to continue searching?");
+
+                        if (confirm == true) {
+                            // Inform the user and stop the search!
+                            stopSearching(keyword);
+                        }
+                    }
                 }
             }
         }
@@ -248,7 +285,7 @@ function assignChromeStorageLocally(variable, value) {
  * Date: 22/02/21
  * =====================
  */
-function stopSearching() {
+function stopSearching(keyword) {
     // Reset locally stored variables
     chrome.storage.local.set({fishing: 0});
     chrome.storage.local.set({profile_count: 0});
