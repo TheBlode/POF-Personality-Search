@@ -239,10 +239,12 @@ function searchProfile() {
                     match_found = true;
 
                     // Keep searching or stop?
-                    if (window.confirm("A match was found. Would you like to stop searching?")) {
+                    if (window.confirm("A match was found. Would you like to keep searching?")) {
+                        // Nothing
+                    } else {
                         // Inform the user and stop the search!
                         stopSearching(keyword);
-                    }
+                    }                    }
                 }
 
                 if (profile_interests != undefined) {
@@ -251,10 +253,12 @@ function searchProfile() {
                         match_found = true;
 
                         // Keep searching or stop?
-                        if (window.confirm("A match was found. Would you like to stop searching?")) {
+                        if (window.confirm("A match was found. Would you like to keep searching?")) {
+                            // Nothing
+                        } else {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
-                        }
+                        }    
                     }
                 }
 
@@ -264,10 +268,12 @@ function searchProfile() {
                         match_found = true;
 
                         // Keep searching or stop?
-                        if (window.confirm("A match was found. Would you like to stop searching?")) {
+                        if (window.confirm("A match was found. Would you like to keep searching?")) {
+                            // Nothing
+                        } else {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
-                        }
+                        }    
                     }
                 }
             }
