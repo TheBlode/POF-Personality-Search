@@ -142,7 +142,7 @@ function goFishing() {
     });
 
     // Inform user the search is about to start
-    window.alert("Thanks for using POF Personality Spear Fisher! We're just going to gather the profiles, so please wait until that is done. You'll see another popup like this when it's ready to move on to the next stage.");
+    window.alert("Thanks for using POF Personality Search! We're just going to gather the profiles, so please wait until that is done. You'll see another popup like this when it's ready to move on to the next stage.");
 
     // Intialise variables
     var counter = 1;
@@ -239,9 +239,7 @@ function searchProfile() {
                     match_found = true;
 
                     // Keep searching or stop?
-                    var r = confirm("Would you like to continue searching?");
-
-                    if (r == true) {
+                    if (confirm("Would you like to continue searching?") {
                         // Inform the user and stop the search!
                         stopSearching(keyword);
                     }
