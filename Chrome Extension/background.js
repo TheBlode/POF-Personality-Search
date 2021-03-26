@@ -251,9 +251,7 @@ function searchProfile() {
                         match_found = true;
 
                         // Keep searching or stop?
-                        var confirm = confirm("Would you like to continue searching?");
-
-                        if (confirm == true) {
+                        if (window.confirm("A match was found. Would you like to stop searching?")) {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
                         }
@@ -266,9 +264,7 @@ function searchProfile() {
                         match_found = true;
 
                         // Keep searching or stop?
-                        var confirm = confirm("Would you like to continue searching?");
-
-                        if (confirm == true) {
+                        if (window.confirm("A match was found. Would you like to stop searching?")) {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
                         }
