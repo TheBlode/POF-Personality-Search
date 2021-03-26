@@ -239,9 +239,9 @@ function searchProfile() {
                     match_found = true;
 
                     // Keep searching or stop?
-                    var confirm = confirm("Would you like to continue searching?");
+                    var r = confirm("Would you like to continue searching?");
 
-                    if (confirm == true) {
+                    if (r == true) {
                         // Inform the user and stop the search!
                         stopSearching(keyword);
                     }
