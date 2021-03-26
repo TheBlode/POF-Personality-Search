@@ -239,7 +239,7 @@ function searchProfile() {
                     match_found = true;
 
                     // Keep searching or stop?
-                    if (confirm("A match was found. Would you like to stop searching?")) {
+                    if (window.confirm("A match was found. Would you like to stop searching?")) {
                         // Inform the user and stop the search!
                         stopSearching(keyword);
                     }
