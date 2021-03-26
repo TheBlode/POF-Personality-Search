@@ -244,7 +244,7 @@ function searchProfile() {
                     } else {
                         // Inform the user and stop the search!
                         stopSearching(keyword);
-                    }                    }
+                    }
                 }
 
                 if (profile_interests != undefined) {
@@ -258,7 +258,7 @@ function searchProfile() {
                         } else {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
-                        }    
+                        }
                     }
                 }
 
@@ -273,7 +273,7 @@ function searchProfile() {
                         } else {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
-                        }    
+                        }
                     }
                 }
             }
