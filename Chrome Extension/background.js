@@ -239,7 +239,7 @@ function searchProfile() {
                     match_found = true;
 
                     // Keep searching or stop?
-                    if (confirm("Would you like to continue searching?") {
+                    if (confirm("Would you like to continue searching?")) {
                         // Inform the user and stop the search!
                         stopSearching(keyword);
                     }
