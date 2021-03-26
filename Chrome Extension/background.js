@@ -52,6 +52,41 @@ chrome.storage.local.get("interest_five", function(data) {
     assignChromeStorageLocally("2", interest_five);
 });
 
+chrome.storage.local.get("interest_six", function(data) {
+    interest_six = data.interest_six;
+
+    // Assign to the script
+    assignChromeStorageLocally("2", interest_six);
+});
+
+chrome.storage.local.get("interest_seven", function(data) {
+    interest_seven = data.interest_seven;
+
+    // Assign to the script
+    assignChromeStorageLocally("2", interest_seven);
+});
+
+chrome.storage.local.get("interest_eight", function(data) {
+    interest_eight = data.interest_eight;
+
+    // Assign to the script
+    assignChromeStorageLocally("2", interest_eight);
+});
+
+chrome.storage.local.get("interest_nine", function(data) {
+    interest_nine = data.interest_nine;
+
+    // Assign to the script
+    assignChromeStorageLocally("2", interest_nine);
+});
+
+chrome.storage.local.get("interest_ten", function(data) {
+    interest_ten = data.interest_ten;
+
+    // Assign to the script
+    assignChromeStorageLocally("2", interest_ten);
+});
+
 // Grab profile index
 chrome.storage.local.get("profile_index", function(data) {
     profile_index = parseInt(data.profile_index);

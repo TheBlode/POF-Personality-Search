@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "POF Keyword Search",
+    "name": "POF Personality Search",
     "description": "This extension will find matches on Plenty of Fish based on keyword. This extension was originally named \"POF Personality Spear Fisher.\"",
     "version": "1.0",
     "browser_action": {

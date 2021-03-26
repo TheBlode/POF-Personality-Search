@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
     <head>
-    <title>POF Personality Spear Fisher</title>
+    <title>POF Personality Search</title>
     </head>
     <body>
         <style>
         body {
-            min-width: 100px;
+            background-image: linear-gradient(#c2e59c, #64b3f4);
+            min-width: 500px;
             max-width: 100%;
             min-height: 100px;
             max-height: 100%;
@@ -14,14 +15,53 @@
             vertical-align:middle;
         }
         </style>
-        <h1>POF Personality Spear Fisher</h1>
-        <p>Please enter some interests you'd like your perfect partner to share;
+        <center><img src="title.png" /></center>
+        <p>Please enter some interests or professions you'd like your perfect partner to share;
         </p>
-        Interest #1<input id="interest_one" type="text" /><br />
-        Interest #2<input id="interest_two" type="text" /><br />
-        Interest #3<input id="interest_three" type="text" /><br />
-        Interest #4<input id="interest_four" type="text" /><br />
-        Interest #5<input id="interest_five" type="text" /><br /><br />
+        <table>
+            <tr>
+                <td>
+                Interest #1: <input id="interest_one" type="text" />
+                </td>
+                <td>
+                    Interest #2: <input id="interest_two" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Interest #3: <input id="interest_three" type="text" />
+                </td>
+                <td>
+                    Interest #4: <input id="interest_four" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Interest #5: <input id="interest_five" type="text" />
+                </td>
+                <td>
+                    Interest #6: <input id="interest_six" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Interest #7: <input id="interest_seven" type="text" />
+                </td>
+                <td>
+                    Interest #8: <input id="interest_eight" type="text" />
+                </td>
+            <tr>
+                <td>
+                    Interest #9: <input id="interest_nine" type="text" />
+                </td>
+                <td>
+                    Interest#10:<input id="interest_ten" type="text" />
+                </td>
+            </tr>
+            </tr>
+        </table>
+        <br />
+        <center>
         Number of pages to search:
             <select id="pages">
                 <option value="1">1</option>
@@ -116,7 +156,8 @@
                 <option value="100">100</option>
             </select>
             <br /><br />
-        <button id="search">Search</button>&nbsp;<button id="reset">Reset</button>
+        <button id="search">Search</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="reset">Reset</button>
+        </center>
         <script src="popup.js"></script>
     </body>
 </html>
