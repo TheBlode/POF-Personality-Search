@@ -15,5 +15,5 @@
         "matches": ["https://m.pof.com/search", "https://m.pof.com/viewprofile*"],
         "js": ["jquery.js", "background.js"]
     }],
-    "permissions": ["https://m.pof.com/search", "https://m.pof.com/viewprofile*", "storage"]
+    "permissions": ["storage"]
 }
