@@ -142,7 +142,7 @@ function goFishing() {
     });
 
     // Inform user the search is about to start
-    window.alert("Thanks for using POF Personality Search! We're just going to gather the profiles, so please wait until that is done. You'll see another popup like this when it's ready to move on to the next stage.");
+    window.alert("Thanks for using POF Personality Search! We're just going to gather profiles to look at, so please be patient until that is done. You'll see another popup like this when it's ready to move on to the next stage. NB: Due to the nature of how the Chrome browser behaves, you must keep this window active on your screen at all times during the search.");
 
     // Intialise variables
     var counter = 1;
@@ -205,7 +205,7 @@ function goFishing() {
         });
 
         // Inform user that profiles have been stored
-        window.alert("That's finished! Now I will check the profiles for matches for you!");
+        window.alert("That's finished! Now I will check the profiles for matches for you! NB: Again, due to the nature of how the Chrome browser behaves, you must keep this window active on your screen at all times during the search.");
 
         // Go to next page
         window.location.href = profile_array_temp[0];
@@ -241,6 +241,7 @@ function searchProfile() {
                     // Keep searching or stop?
                     if (window.confirm("A match was found. Would you like to keep searching?")) {
                         // Nothing
+                            match_found = false;
                     } else {
                         // Inform the user and stop the search!
                         stopSearching(keyword);
@@ -255,6 +256,7 @@ function searchProfile() {
                         // Keep searching or stop?
                         if (window.confirm("A match was found. Would you like to keep searching?")) {
                             // Nothing
+                            match_found = false;
                         } else {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
@@ -270,6 +272,7 @@ function searchProfile() {
                         // Keep searching or stop?
                         if (window.confirm("A match was found. Would you like to keep searching?")) {
                             // Nothing
+                            match_found = false;
                         } else {
                             // Inform the user and stop the search!
                             stopSearching(keyword);
@@ -286,8 +289,27 @@ function searchProfile() {
         chrome.storage.local.set({profile_index: profile_index});
 
         if (match_found == false) {
-            // Go to next profile
-            window.location.href = profile_array[profile_index];
+            // If we're done, inform the user
+            if (profile_array[profile_index] == undefined) {
+                // Go back to the search
+                window.location.href = "https://m.pof.com/images";
+
+                window.alert("The search is over! I couldn't find any matches. Please re-run your search again later or try different search terms.");
+
+                // Reset locally stored variables
+                chrome.storage.local.set({fishing: 0});
+                chrome.storage.local.set({profile_count: 0});
+                chrome.storage.local.set({profiles: ""});
+                chrome.storage.local.set({profile_index: 0});
+                chrome.storage.local.set({interest_one: ""});
+                chrome.storage.local.set({interest_two: ""});
+                chrome.storage.local.set({interest_three: ""});
+                chrome.storage.local.set({interest_four: ""});
+                chrome.storage.local.set({interest_five: ""});
+            } else {
+                // Go to next profile
+                window.location.href = profile_array[profile_index];
+            }
         }
     }, 1000);
 }

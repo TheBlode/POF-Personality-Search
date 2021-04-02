@@ -1,5 +1,17 @@
 // Add event handler for on click event to start searching
 document.getElementById("search").onclick = function() {
+    // Reset locally stored variables
+    chrome.storage.local.set({fishing: 0});
+    chrome.storage.local.set({profile_count: 0});
+    chrome.storage.local.set({profiles: ""});
+    chrome.storage.local.set({profile_index: 0});
+    chrome.storage.local.set({interest_one: ""});
+    chrome.storage.local.set({interest_two: ""});
+    chrome.storage.local.set({interest_three: ""});
+    chrome.storage.local.set({interest_four: ""});
+    chrome.storage.local.set({interest_five: ""});
+    chrome.storage.local.set({pages: 0});
+
     /* =======================
      * Search logic
      * ======================= */
