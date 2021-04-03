@@ -29,7 +29,7 @@ Select the number of pages you'd like to parse (the more matches you parse throu
 - Click the Search button and follow the prompts! Best of luck finding your soulmate!
 
 # Known bugs
-None known at this time. If you find bugs, please report them on;
+No known at this time. If you find bugs, please report them on;
 
 - Github https://github.com/TheBlode/POF-Personality-Search
 
