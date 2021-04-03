@@ -1,11 +1,11 @@
 # POF Personality Search
-Welcome to the POF Personality Search!This extension will help you dig deeper into the POF search results to find somebody who matches you based on your desired personality traits, professions or interests. I wish you the best of luck in finding your soulmate!
+Welcome to the POF Personality Search! This extension will help you dig deeper into the POF search results to find somebody who matches you based on your desired personality traits, professions or interests. I wish you the best of luck in finding your soulmate!
 
 ![alt text](https://i.imgur.com/bPT4ABn.png)
 
 # Installation
 ## Method #1 (easiest)
-Head over to the Chrome Web Store and download my extension! The link is here -> chrome.google.com/webstore/detail/pof-personality-search/lodgobikogmbkkhehcidnpempfefjkmp then review the instructions on how to use the extension below!
+Head over to the Chrome Web Store and download my extension! The link is here -> https://chrome.google.com/webstore/detail/pof-personality-search/lodgobikogmbkkhehcidnpempfefjkmp then review the instructions on how to use the extension below!
 
 ## Method #2
 - Clone the repository using `git` or download the repository as a zip file.
@@ -29,4 +29,8 @@ Select the number of pages you'd like to parse (the more matches you parse throu
 - Click the Search button and follow the prompts! Best of luck finding your soulmate!
 
 # Known bugs
-None known at this time. If you find bugs, please report them on Github -> https://github.com/TheBlode/POF-Personality-Search or on the Chrome Web Store -> https://chrome.google.com/webstore/detail/pof-personality-search/lodgobikogmbkkhehcidnpempfefjkmp
+None known at this time. If you find bugs, please report them on;
+
+- Github https://github.com/TheBlode/POF-Personality-Search
+
+- Chrome Web Store -> https://chrome.google.com/webstore/detail/pof-personality-search/lodgobikogmbkkhehcidnpempfefjkmp
