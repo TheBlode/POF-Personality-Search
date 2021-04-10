@@ -28,7 +28,7 @@ Here are some instructions on how to use the extension;
 - Click the Search button and follow the prompts! Best of luck finding your soulmate!
 
 # Known bugs
-- No known at this time. If you find bugs, please report them on;
+- No known at this time. If you find bugs, please report them.
 
 # Upcoming changes
 - Report style mode. This feature which allow matches to be presented to you in a report after all the results have been parsed.
